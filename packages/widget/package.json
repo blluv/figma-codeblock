@@ -1,0 +1,19 @@
+{
+  "name": "@figma-codeblock/widget",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "esbuild src/index.tsx --outfile=../../dist/code.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.89.0",
+    "@figma/widget-typings": "^1.9.1",
+    "esbuild": "^0.20.2"
+  },
+  "dependencies": {
+    "@figma-codeblock/shared": "workspace:^"
+  }
+}

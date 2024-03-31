@@ -1,6 +1,7 @@
-import { ThemedToken } from "shiki";
+import type { ThemedToken } from "shiki"
 
 export interface HighlightData {
+    theme: string;
     shikiTokens: ThemedToken[][];
     bg: string;
     fg: string;
@@ -16,7 +17,7 @@ export interface WidgetState {
 
 export interface FigmaEventMessage<T = any> {
     pluginMessage?: {
-        name: string,
+        type: string,
         data: T
     }
 }

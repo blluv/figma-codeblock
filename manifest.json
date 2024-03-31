@@ -1,11 +1,13 @@
 {
-  "name": "codeblock",
-  "id": "10074075004744806011",
-  "api": "1.0.0",
-  "editorType": ["figma"],
-  "permissions": [],
-  "containsWidget": true,
-  "main": "dist/code.js",
-  "ui": "dist/index.html",
-  "widgetApi": "1.0.0"
+    "name": "figma-codeblock",
+    "id": "90583395839058235",
+    "api": "1.0.0",
+    "editorType": [
+        "figma"
+    ],
+    "permissions": [],
+    "containsWidget": true,
+    "main": "dist/code.js",
+    "ui": "dist/index.html",
+    "widgetApi": "1.0.0"
 }
