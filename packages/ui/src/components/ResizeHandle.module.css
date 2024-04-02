@@ -1,0 +1,16 @@
+.wrap {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+}

@@ -28,6 +28,9 @@ function Widget() {
                             setState(msg.state);
                             figma.ui.postMessage({ type: "state", state: msg.state });
                             break;
+                        case "resize":
+                            figma.ui.resize(msg.size.width, msg.size.height);
+                            break;
                     }
                 });
                 await new Promise<void>((res) => figma.on("close", () => res()));
