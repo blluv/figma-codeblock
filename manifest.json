@@ -1,10 +1,16 @@
 {
     "name": "figma-codeblock",
-    "id": "90583395839058235",
+    "id": "1356613344857148031",
     "api": "1.0.0",
     "editorType": [
         "figma"
     ],
+    "documentAccess": "dynamic-page",
+    "networkAccess": {
+        "allowedDomains": [
+            "none"
+        ]
+    },
     "permissions": [],
     "containsWidget": true,
     "main": "dist/code.js",
