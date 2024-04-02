@@ -15,6 +15,7 @@
     "react": "^18.2.0",
     "react-ace": "^11.0.1",
     "react-dom": "^18.2.0",
+    "react-select": "^5.8.0",
     "shiki": "^1.2.1"
   },
   "devDependencies": {

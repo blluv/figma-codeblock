@@ -5,7 +5,11 @@ import styles from "./App.module.css"
 import { useWidgetState } from "./hooks/useWidgetState";
 import { useEffect, useState } from "react";
 import { WidgetState } from "@figma-codeblock/shared";
-import { codeToTokens } from "shiki";
+import { codeToTokens, bundledLanguages, bundledThemes } from "shiki";
+import Select from 'react-select';
+
+const languageOptions = [{ value: "", label: "none", }, ...Object.keys(bundledLanguages).map(e => ({ value: e, label: e }))]
+const themeOptions = Object.keys(bundledThemes).map(e => ({ value: e, label: e }))
 
 function App() {
   const { state, isLoading, mutate } = useWidgetState();
@@ -89,28 +93,18 @@ function App() {
           })} />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="languageSelect">Language</label>
-          <select id="languageSelect" disabled={isLoading} value={editorState.language} onChange={(e => {
-            const val = e.currentTarget.value;
-            setEditorState((prev) => ({ ...prev, language: val }))
-          })}>
-            <option disabled value="">none</option>
-            <option value="html">html</option>
-            <option value="css">css</option>
-            <option value="javascript">javascript</option>
-            <option value="typescript">typescript</option>
-          </select>
+          <label>Language</label>
+          <Select<{ value: string, label: string }> options={languageOptions} isLoading={isLoading} value={languageOptions.find(e => e.value === editorState.language)} onChange={(e => {
+            if (e)
+              setEditorState((prev) => ({ ...prev, language: e.value }))
+          })} />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="themeSelect">Theme</label>
-          <select id="themeSelect" disabled={isLoading} value={editorState.theme} onChange={(e => {
-            const val = e.currentTarget.value;
-            setEditorState((prev) => ({ ...prev, theme: val }))
-          })}>
-            <option disabled value="">none</option>
-            <option value="github-light">github-light</option>
-            <option value="github-dark">github-dark</option>
-          </select>
+          <label>Theme</label>
+          <Select<{ value: string, label: string }> options={themeOptions} isLoading={isLoading} value={languageOptions.find(e => e.value === editorState.theme)} onChange={(e => {
+            if (e)
+              setEditorState((prev) => ({ ...prev, theme: e.value }))
+          })} />
         </div>
 
         <button disabled={isLoading} onClick={onClickChange}>change</button>
