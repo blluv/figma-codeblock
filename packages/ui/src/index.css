@@ -1,3 +1,22 @@
 body {
   margin: 0;
 }
+
+input,
+button,
+select {
+  background: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+input:disabled,
+button:disabled,
+select:disabled {
+  opacity: 0.3;
+}
+
+label {
+  font-size: 14px;
+}

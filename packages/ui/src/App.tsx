@@ -74,34 +74,46 @@ function App() {
         showPrintMargin={false}
       />
       <div className={styles.sidebar}>
-        <input type="text" disabled={isLoading} value={editorState.fontSize} onChange={(e => {
-          const val = e.currentTarget.value;
-          setEditorState((prev) => ({ ...prev, fontSize: val }))
-        })} />
-        <input type="text" disabled={isLoading} value={editorState.fontFamily} onChange={(e => {
-          const val = e.currentTarget.value;
-          setEditorState((prev) => ({ ...prev, fontFamily: val }))
-        })} />
-        <select disabled={isLoading} value={editorState.language} onChange={(e => {
-          const val = e.currentTarget.value;
-          setEditorState((prev) => ({ ...prev, language: val }))
-        })}>
-          <option disabled value="">none</option>
-          <option value="html">html</option>
-          <option value="css">css</option>
-          <option value="javascript">javascript</option>
-          <option value="typescript">typescript</option>
-        </select>
-        <select disabled={isLoading} value={editorState.theme} onChange={(e => {
-          const val = e.currentTarget.value;
-          setEditorState((prev) => ({ ...prev, theme: val }))
-        })}>
-          <option disabled value="">none</option>
-          <option value="github-light">github-light</option>
-          <option value="github-dark">github-dark</option>
-        </select>
+        <div className={styles.inputGroup}>
+          <label htmlFor="fontSizeInput">FontSize</label>
+          <input id="fontSizeInput" type="text" disabled={isLoading} value={editorState.fontSize} onChange={(e => {
+            const val = e.currentTarget.value;
+            setEditorState((prev) => ({ ...prev, fontSize: val }))
+          })} />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="fontFamilyInput">FontFamily</label>
+          <input id="fontFamilyInput" type="text" disabled={isLoading} value={editorState.fontFamily} onChange={(e => {
+            const val = e.currentTarget.value;
+            setEditorState((prev) => ({ ...prev, fontFamily: val }))
+          })} />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="languageSelect">Language</label>
+          <select id="languageSelect" disabled={isLoading} value={editorState.language} onChange={(e => {
+            const val = e.currentTarget.value;
+            setEditorState((prev) => ({ ...prev, language: val }))
+          })}>
+            <option disabled value="">none</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="javascript">javascript</option>
+            <option value="typescript">typescript</option>
+          </select>
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="themeSelect">Theme</label>
+          <select id="themeSelect" disabled={isLoading} value={editorState.theme} onChange={(e => {
+            const val = e.currentTarget.value;
+            setEditorState((prev) => ({ ...prev, theme: val }))
+          })}>
+            <option disabled value="">none</option>
+            <option value="github-light">github-light</option>
+            <option value="github-dark">github-dark</option>
+          </select>
+        </div>
 
-        <button onClick={onClickChange}>change</button>
+        <button disabled={isLoading} onClick={onClickChange}>change</button>
       </div>
     </div>
   </>
