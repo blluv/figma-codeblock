@@ -102,7 +102,7 @@ function App() {
         </div>
         <div className={styles.inputGroup}>
           <label>Theme</label>
-          <Select<{ value: string, label: string }> options={themeOptions} isLoading={isLoading} value={languageOptions.find(e => e.value === editorState.theme)} onChange={(e => {
+          <Select<{ value: string, label: string }> options={themeOptions} isLoading={isLoading} value={themeOptions.find(e => e.value === editorState.theme)} onChange={(e => {
             if (e)
               setEditorState((prev) => ({ ...prev, theme: e.value }))
           })} />
