@@ -9,7 +9,7 @@ import { codeToTokens, bundledLanguages, bundledThemes } from "shiki";
 import Select from 'react-select';
 import { ResizeHandle } from "./components/ResizeHandle";
 
-const languageOptions = [{ value: "", label: "none", }, ...Object.keys(bundledLanguages).map(e => ({ value: e, label: e }))]
+const languageOptions = Object.keys(bundledLanguages).map(e => ({ value: e, label: e }))
 const themeOptions = Object.keys(bundledThemes).map(e => ({ value: e, label: e }))
 
 function App() {
